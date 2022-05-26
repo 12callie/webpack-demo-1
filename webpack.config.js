@@ -6,15 +6,15 @@ module.exports = {
   mode: 'development',
   entry: './src/index.js',
   devServer: {
-    static: './dist',
+    contentBase: './dist',
   },
   output: {
     filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
   },
   plugins:[new HtmlWebpackPlugin({
-    title: 'webpack_demo', 
-    template: 'src/assets/index.html', //以引号中的文件为模板生成dist文件中的html文件
+    title: 'Development', 
+    template: 'src/assets/index.html',
   })],
   module: {
     rules: [
@@ -23,5 +23,7 @@ module.exports = {
         use: ["style-loader", "css-loader"],
       },
     ],
-  }
+  },optimization: {
+    runtimeChunk: 'single',
+  },
 };
