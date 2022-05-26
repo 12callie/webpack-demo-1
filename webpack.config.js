@@ -1,21 +1,14 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const base = require('./webpack.config.base.js')
 
 module.exports = {
+  ...base,
   mode: 'development',
-  entry: './src/index.js',
   devServer: {
     contentBase: './dist',
   },
-  output: {
-    filename: '[name].[contenthash].js',
-    path: path.resolve(__dirname, 'dist'),
-  },
-  plugins:[new HtmlWebpackPlugin({
-    title: 'Development', 
-    template: 'src/assets/index.html',
-  })],
   module: {
     rules: [
       {
@@ -23,7 +16,8 @@ module.exports = {
         use: ["style-loader", "css-loader"],
       },
     ],
-  },optimization: {
+  },
+  optimization: {
     runtimeChunk: 'single',
   },
 };
