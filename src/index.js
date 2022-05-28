@@ -5,7 +5,7 @@ import './z.styl'
 // import png from './assets/4.png'
 // console.log(png)
 
-// const div = document.getElementById('app1')
+const div = document.getElementById('app1')
 // div.innerHTML = `
 //     <img src="${png}">
 // `
