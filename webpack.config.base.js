@@ -46,6 +46,10 @@ module.exports = {
           'stylus-loader'
         ],
       },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        use: ["file-loader"],
+      },
     ],
   },
 };
