@@ -12,7 +12,7 @@ import './z.styl'
 
 const div = document.getElementById('app1')
 const button = document.createElement('button')
-button.innerText = "懒加载"
+button.innerText = "懒加载1"
 div.appendChild(button)
 button.onclick = ()=>{
     const promise = import('./lazy')
